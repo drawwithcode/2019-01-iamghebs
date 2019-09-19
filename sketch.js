@@ -10,8 +10,10 @@ function setup() {
 }
 
 function draw() {
-  let r=height/3;   //Definizone costante pari al raggio della circonferenza
-  let a=2;          //Definizione della cadenza delle linee tracciate
+  if(width>=height) //Vertical screen optimization
+    var r=height/3;
+  else var r=width/3; //Definizone raggio della circonferenza
+  let a=2;            //Definizione della cadenza delle linee tracciate
   let x=r*cos(frameCount*a); //Definizone ascisse punto mobile
   let y=r*sin(frameCount*a); //Definizione ordinete punto mobile
 
